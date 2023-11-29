@@ -1,4 +1,4 @@
-# Netflix-Movies-Investigation
+![image](https://github.com/esrabeslioglu/Netflix-Movies-Investigation/assets/52747952/a7f27cbe-3d8b-4fcb-a3ff-5afa0fbfedb1)# Netflix-Movies-Investigation
 
 Netflix films are believed to have decreased in average duration over time. Let's make an interpretation based on the information in the dataset to determine whether there has indeed been a decrease in film durations.
 
@@ -18,32 +18,32 @@ description	    Description of the show\
 genre	          Show genre
 
 # Importing pandas and matplotlib
-import pandas as pd
-import matplotlib.pyplot as plt
+import pandas as pd\
+import matplotlib.pyplot as plt\
 
 # Start coding!
-netflix_df = pd.read_csv("netflix_data.csv")
-netflix_subset = netflix_df[netflix_df["type"] == "Movie"]
-netflix_movies = netflix_subset.loc[:, ["title", "country", "genre", "release_year", "duration"]]
-short_movies = netflix_movies[netflix_movies["duration"] < 60]
-colors = []
-for lab, row in netflix_movies.iterrows():
-    if row["genre"] == "Children":
-        colors.append("Pink")
-    elif row["genre"] == "Documentaries":
-        colors.append("Green")
-    elif  row["genre"] == "Stand-Up":
-        colors.append("Red")
-    else:
-        colors.append("Blue")
+netflix_df = pd.read_csv("netflix_data.csv")\
+netflix_subset = netflix_df[netflix_df["type"] == "Movie"]\
+netflix_movies = netflix_subset.loc[:, ["title", "country", "genre", "release_year", "duration"]]\
+short_movies = netflix_movies[netflix_movies["duration"] < 60]\
+colors = []\
+for lab, row in netflix_movies.iterrows():\
+    if row["genre"] == "Children":\
+        colors.append("Pink")\
+    elif row["genre"] == "Documentaries":\
+        colors.append("Green")\
+    elif  row["genre"] == "Stand-Up":\
+        colors.append("Red")\
+    else:\
+        colors.append("Blue")\
 
 # Now we need the graph of all these information
-colors[:10]
-fig = plt.figure(figsize=(12,8))
-plt.scatter(netflix_movies.release_year, netflix_movies.duration, c = colors)
-plt.xlabel("Release year")
-plt.ylabel("Duration (min)")
-plt.title("Movie Duration by Year of Release")
+colors[:10]\
+fig = plt.figure(figsize=(12,8))\
+plt.scatter(netflix_movies.release_year, netflix_movies.duration, c = colors)\
+plt.xlabel("Release year")\
+plt.ylabel("Duration (min)")\
+plt.title("Movie Duration by Year of Release")\
 plt.show()
 
 # It can not be said that there is a decrease in the durations of the movies
