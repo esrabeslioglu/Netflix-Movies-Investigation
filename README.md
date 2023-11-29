@@ -1,4 +1,4 @@
-![image](https://github.com/esrabeslioglu/Netflix-Movies-Investigation/assets/52747952/a7f27cbe-3d8b-4fcb-a3ff-5afa0fbfedb1)# Netflix-Movies-Investigation
+# Netflix-Movies-Investigation
 
 Netflix films are believed to have decreased in average duration over time. Let's make an interpretation based on the information in the dataset to determine whether there has indeed been a decrease in film durations.
 
